@@ -21,6 +21,7 @@
   "homepage": "https://github.com/aroseca15/fitness_tracker#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "heroku": "^7.47.6",
     "mongoose": "^5.3.16",
     "morgan": "^1.9.1"
   }
