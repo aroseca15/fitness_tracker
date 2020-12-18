@@ -10,7 +10,7 @@ routes.get("/api/workouts", (req, res)=>{
 
 routes.put("/api/workouts/:id", (req, res)=>{
     db.findByIdAndUpdate(req.params.id, 
-     {$push:{excercise:req.body}}   ,
+     {$push:{exercises:req.body}}   ,
      {new:true} )
     .then(records => {
         console.log("Updated",records)
