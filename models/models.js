@@ -36,12 +36,16 @@ const workoutSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    
+    
+}, {
     // Below will assist in putting information into colums:
     toJSON: {
         virtuals: true
     }
-    
 });
+
+
 
 workoutSchema.virtual("totalDuration").get(function(){
     return this.excercise.reduce((total, excercise)=>{

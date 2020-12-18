@@ -1,5 +1,5 @@
 const routes = require("express").Router();
-const db = require("../models/models");
+const db = require("../models/models.js");
 routes.get("/api/workouts", (req, res)=>{
     db.find()
     .then(records => {
@@ -10,7 +10,7 @@ routes.get("/api/workouts", (req, res)=>{
 
 routes.put("/api/workouts/:id", (req, res)=>{
     db.findByIdAndUpdate(req.params.id, 
-     {$push:{exercise:req.body}}   ,
+     {$push:{excercise:req.body}}   ,
      {new:true} )
     .then(records => {
         console.log("Updated",records)
@@ -19,10 +19,12 @@ routes.put("/api/workouts/:id", (req, res)=>{
 });
 
 routes.post("/api/workouts", (req, res)=>{
-    db.create(req.body)
+    db.create({})
     .then(records => {
         console.log("Created",records)
         res.json(records)
+    }).catch(error=>{
+        console.log(error)
     })
 });
 
