@@ -36,6 +36,7 @@ const workoutSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    // Below will assist in putting information into colums:
     toJSON: {
         virtuals: true
     }
